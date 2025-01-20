@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    "minecraft:bamboo_block"
+    "#minecraft:bamboo_blocks"
   ],
   "result": {
     "count": 9,

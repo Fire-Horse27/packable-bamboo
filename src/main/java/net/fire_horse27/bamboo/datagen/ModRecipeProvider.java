@@ -7,7 +7,9 @@ import net.minecraft.data.recipe.RecipeGenerator;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 
+import javax.swing.text.html.HTML;
 import java.util.concurrent.CompletableFuture;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -22,14 +24,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void generate() {
                 createShapeless(RecipeCategory.BUILDING_BLOCKS, Items.BAMBOO, 9)
-                        .input(Items.BAMBOO_BLOCK)
+                        .input(ItemTags.BAMBOO_BLOCKS)
                         .criterion(hasItem(Items.BAMBOO_BLOCK), conditionsFromItem(Items.BAMBOO_BLOCK))
                         .offerTo(exporter, "bamboo:bamboo");
 
                 createShaped(RecipeCategory.BUILDING_BLOCKS, Items.BAMBOO_PLANKS,4)
                         .pattern("#")
                         .pattern("#")
-                        .input('#', Items.BAMBOO_BLOCK)
+                        .input('#', ItemTags.BAMBOO_BLOCKS)
                         .criterion(hasItem(Items.DROPPER), conditionsFromItem(Items.DROPPER))
                         .offerTo(exporter);
             }
